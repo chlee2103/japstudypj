@@ -1,0 +1,40 @@
+server:
+  port: 9998
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydiary?serverTimeZone=UTC&CharacterEncoding=UTF-8
+    username: chohitit
+    password: 2w333ert
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+      connection-init-sql: SELECT 1
+      validation-timeout: 2000
+      minimum-idle: 10
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  ## JPA Setting Info
+  jpa:
+    hibernate:
+      ddl-auto: update          # option type: create, create-drop, update, validate, none
+    properties:
+      hibernate:
+        # diarect:              # 쿼리의 기준이 되는 데이터베이스 엔진을 설정합니다.
+        show_sql: true          # sql 쿼리를 보여줍니다.
+        format_sql: true        # sql query formatting
+        use_sql_comments: true  # sql 쿼리의 추가정보를 보여줍니다.
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace  # query의 ?에 어떤 값이 들어가는지 추적할 수 있는 설정입니다. TRACE Log에 값을 보여줍니다.
+
+jwt:
+  header: Authorization
+  secret: rutyweorituwyerotiuweyrtoiuweyrtoweiurtywoeighdfsojkghsdfgsdofiguwyertouw|base64YWprbGdoc2Rma2xnanNkaGZnbGprc2RmZ2hsc2
+  access-token-validity-in-seconds: 600 # 10 min
