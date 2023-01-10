@@ -1,8 +1,8 @@
-package com.example.jpastudy.jwttoken.controller;
+package com.example.jpastudy.member.controller;
 
-import com.example.jpastudy.base.dto.ResultDto;
-import com.example.jpastudy.jwttoken.controller.dto.MemberDto;
-import com.example.jpastudy.jwttoken.service.MemberService;
+import com.example.jpastudy.base.vo.ResultVO;
+import com.example.jpastudy.member.dto.MemberDto;
+import com.example.jpastudy.member.service.MemberService;
 import com.example.jpastudy.jwttoken.token.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,8 +25,8 @@ public class MemberController {
     private final JwtTokenProvider jwtTokenProvider;
 
     @PostMapping("/join")
-    public ResponseEntity<ResultDto> join(@Valid @RequestBody MemberDto memberDto) throws Exception {
-        ResultDto result = null;
+    public ResponseEntity<ResultVO> join(@Valid @RequestBody MemberDto memberDto) throws Exception {
+        ResultVO result = null;
         if(memberService.joinValidationCheck(memberDto)){
             result = memberService.join(memberDto);
         }

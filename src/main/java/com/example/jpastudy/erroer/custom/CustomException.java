@@ -1,4 +1,4 @@
-package com.example.jpastudy.exception.custom;
+package com.example.jpastudy.erroer.custom;
 
 import lombok.Getter;
 

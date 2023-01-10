@@ -1,6 +1,6 @@
-package com.example.jpastudy.exception;
+package com.example.jpastudy.erroer;
 
-import com.example.jpastudy.exception.custom.CustomErrorCode;
+import com.example.jpastudy.erroer.custom.CustomErrorCode;
 import lombok.Getter;
 import lombok.Setter;
 

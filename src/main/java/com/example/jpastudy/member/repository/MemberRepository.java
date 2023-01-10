@@ -1,5 +1,6 @@
-package com.example.jpastudy.jwttoken.domain;
+package com.example.jpastudy.member.repository;
 
+import com.example.jpastudy.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

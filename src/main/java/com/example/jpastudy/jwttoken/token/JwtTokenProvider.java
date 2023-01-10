@@ -1,6 +1,6 @@
 package com.example.jpastudy.jwttoken.token;
 
-import com.example.jpastudy.jwttoken.domain.MemberRepository;
+import com.example.jpastudy.member.repository.MemberRepository;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

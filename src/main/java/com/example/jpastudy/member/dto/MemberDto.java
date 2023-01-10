@@ -1,4 +1,4 @@
-package com.example.jpastudy.jwttoken.controller.dto;
+package com.example.jpastudy.member.dto;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

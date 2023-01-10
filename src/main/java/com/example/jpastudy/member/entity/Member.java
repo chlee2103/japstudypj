@@ -1,4 +1,4 @@
-package com.example.jpastudy.jwttoken.domain;
+package com.example.jpastudy.member.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

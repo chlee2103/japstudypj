@@ -1,8 +1,8 @@
-package com.example.jpastudy.exception.handler;
+package com.example.jpastudy.erroer.handler;
 
-import com.example.jpastudy.exception.ErrorCode;
-import com.example.jpastudy.exception.ErrorResponse;
-import com.example.jpastudy.exception.custom.CustomException;
+import com.example.jpastudy.erroer.ErrorCode;
+import com.example.jpastudy.erroer.ErrorResponse;
+import com.example.jpastudy.erroer.custom.CustomException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

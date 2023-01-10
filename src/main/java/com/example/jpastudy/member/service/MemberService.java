@@ -1,11 +1,11 @@
-package com.example.jpastudy.jwttoken.service;
+package com.example.jpastudy.member.service;
 
-import com.example.jpastudy.base.dto.ResultDto;
-import com.example.jpastudy.exception.custom.CustomErrorCode;
-import com.example.jpastudy.exception.custom.CustomException;
-import com.example.jpastudy.jwttoken.controller.dto.MemberDto;
-import com.example.jpastudy.jwttoken.domain.Member;
-import com.example.jpastudy.jwttoken.domain.MemberRepository;
+import com.example.jpastudy.base.vo.ResultVO;
+import com.example.jpastudy.erroer.custom.CustomErrorCode;
+import com.example.jpastudy.erroer.custom.CustomException;
+import com.example.jpastudy.member.dto.MemberDto;
+import com.example.jpastudy.member.entity.Member;
+import com.example.jpastudy.member.repository.MemberRepository;
 import com.example.jpastudy.jwttoken.token.JwtTokenProvider;
 import com.example.jpastudy.utils.HttpHeaderUtils;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public ResultDto join(MemberDto memberDto) {
+    public ResultVO join(MemberDto memberDto) {
         if(this.getMemberByEmail(memberDto.getEmail()).isPresent()) {
             throw new CustomException("Email duplication ", CustomErrorCode.MEMBER_EMAIL_DUPLICATION);
         }
@@ -42,7 +42,7 @@ public class MemberService {
 
         long id = memberRepository.save(member).getId();
         String code = id>0?"00":"11";
-        ResultDto result = new ResultDto(code);
+        ResultVO result = new ResultVO(code);
 
         return result;
     }
@@ -60,7 +60,7 @@ public class MemberService {
         String code = token != null && !"".equals(token)?"00":"11";
 
         HttpHeaders header = HttpHeaderUtils.headerToken(token);
-        ResultDto result = new ResultDto(code);
+        ResultVO result = new ResultVO(code);
         // 로그인에 성공하면 email, roles 로 토큰 생성 후 반환
 
         return ResponseEntity.ok().headers(header).body(result);

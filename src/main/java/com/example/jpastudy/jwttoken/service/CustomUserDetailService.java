@@ -1,6 +1,6 @@
 package com.example.jpastudy.jwttoken.service;
 
-import com.example.jpastudy.jwttoken.domain.MemberRepository;
+import com.example.jpastudy.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
